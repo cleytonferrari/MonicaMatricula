@@ -1,0 +1,10 @@
+Foi feito a vinculação do professor com as disciplinas
+
+Foi criado o modelo ProfessorDisciplina, pra representar a tabela de relacionamentos do banco de dados;
+Foi adicionado o atributo no professor, para ele possuir uma colecao de disciplina;
+Foi criado uma aplicacao ProfessorDisciplinaAplicacao;
+Dentro desta aplicação foi criado de inicio o metodo ListarTodos, e junto com esse metodo foi criado o metodo ListarDisciplinaPorProfessorId que por sua vez precisa do metodo TransformaReaderEmListaDeObjeto;
+
+foi criado o controle ProfessorDisciplina;
+Criado o index, que usa Professor Disciplinaaplicacao para listarTodos;
+Nesta listagem criada passa se um professor com sua colection de Disciplinas, na listagem foi feito um for para exibir as disciplinas do professor.

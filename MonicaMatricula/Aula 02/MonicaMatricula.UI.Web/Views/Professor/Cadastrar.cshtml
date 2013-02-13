@@ -1,0 +1,48 @@
+﻿@model MonicaMatricula.Dominio.Professor
+
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastrar Professor</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Dados do Professor</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nome)
+            @Html.ValidationMessageFor(model => model.Nome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Habilidades)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Habilidades)
+            @Html.ValidationMessageFor(model => model.Habilidades)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Salario)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Salario)
+            @Html.ValidationMessageFor(model => model.Salario)
+        </div>
+
+        <p>
+            <input type="submit" value="Salvar" />
+            @Html.ActionLink("Cancelar", "Index")
+        </p>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,36 @@
+﻿@model MonicaMatricula.Dominio.Aluno
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<fieldset>
+    <legend>Ficha do Aluno</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mae)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mae)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataNascimento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataNascimento)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Editar", new { id=Model.AlunoId }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

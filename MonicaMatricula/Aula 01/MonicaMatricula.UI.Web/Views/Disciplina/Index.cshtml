@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MonicaMatricula.Dominio.Disciplina>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de Disciplinas</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar Nova", "Cadastrar")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConteudoProgramatico)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConteudoProgramatico)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { id=item.DisciplinaId }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.DisciplinaId }) |
+            @Html.ActionLink("Excluir", "Excluir", new { id=item.DisciplinaId })
+        </td>
+    </tr>
+}
+
+</table>

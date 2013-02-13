@@ -1,0 +1,8 @@
+Crie os projetos das camadas;
+Crie o dominio do aluno;
+Crie a aplicacao;
+Crie o controle;
+Crie o scaffold do aluno;
+Validei o aluno com data annotation;
+
+Repeti os passos para curso, professor, disciplina;

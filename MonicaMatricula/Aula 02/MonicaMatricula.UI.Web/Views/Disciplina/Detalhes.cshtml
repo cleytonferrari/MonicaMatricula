@@ -1,0 +1,29 @@
+﻿@model MonicaMatricula.Dominio.Disciplina
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes da Disciplina</h2>
+
+<fieldset>
+    <legend>Detalhes da Disciplina</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ConteudoProgramatico)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ConteudoProgramatico)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Editar", "Editar", new { id=Model.DisciplinaId }) |
+    @Html.ActionLink("Cancelar", "Index")
+</p>

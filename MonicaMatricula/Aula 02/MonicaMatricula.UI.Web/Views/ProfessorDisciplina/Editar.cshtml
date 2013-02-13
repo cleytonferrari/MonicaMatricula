@@ -1,0 +1,52 @@
+﻿@using MonicaMatricula.Dominio.ViewModel
+@model MonicaMatricula.Dominio.Professor
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>Editar</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Dados do Professor e suas Disciplinas</legend>
+
+        @Html.HiddenFor(model => model.ProfessorId)
+        @Html.HiddenFor(model => model.Nome)
+        @Html.HiddenFor(model => model.Habilidades)
+        @Html.HiddenFor(model => model.Salario)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nome)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.Nome)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Disciplinas)
+        </div>
+        @foreach (var professorDisciplinaViewModel in (ICollection<ProfessorDisciplinaViewModel>)ViewBag.ListaProfessorDisciplina)
+                {
+                    <p>
+                        <input type="checkbox" 
+                               name="disciplinaSelecionadas" 
+                               value="@professorDisciplinaViewModel.Disciplina.DisciplinaId" 
+                             @(Html.Raw(professorDisciplinaViewModel.Associado ? "checked=\"checked\"" : "")) />
+                             @professorDisciplinaViewModel.Disciplina.Nome
+                    </p>
+                }
+       
+
+        <p>
+            <input type="submit" value="Salvar" />
+            @Html.ActionLink("Cancelar", "Index")
+        </p>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

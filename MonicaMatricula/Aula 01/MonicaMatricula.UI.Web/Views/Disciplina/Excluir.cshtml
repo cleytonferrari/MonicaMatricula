@@ -1,0 +1,32 @@
+﻿@model MonicaMatricula.Dominio.Disciplina
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir</h2>
+
+<h3>Deseja excluir esta Disciplina?</h3>
+<fieldset>
+    <legend>Detalhes da Disciplina</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ConteudoProgramatico)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ConteudoProgramatico)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Excluir" /> |
+        @Html.ActionLink("Cancelar", "Index")
+    </p>
+}
