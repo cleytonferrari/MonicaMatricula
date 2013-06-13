@@ -40,8 +40,9 @@ namespace MonicaMatricula.UI.Web.Controllers
             if (ModelState.IsValid)
             {
                 professor.Disciplinas = new Collection<Disciplina>();
-                foreach (var disciplinaSelecionada in disciplinaSelecionadas)
-                    professor.Disciplinas.Add(new Disciplina { DisciplinaId = disciplinaSelecionada });
+                if (disciplinaSelecionadas != null)
+                    foreach (var disciplinaSelecionada in disciplinaSelecionadas)
+                        professor.Disciplinas.Add(new Disciplina { DisciplinaId = disciplinaSelecionada });
 
                 var aplicacao = new ProfessorDisciplinaAplicacao();
                 aplicacao.Salvar(professor);
